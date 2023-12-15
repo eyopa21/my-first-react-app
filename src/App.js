@@ -1,5 +1,10 @@
-import ExpenseItem from "./components/ExpenseItem";
-const expenses = [
+import React from 'react';
+
+import Expenses from './components/Expense/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
+
+const App = () => {
+  const expenses = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -21,31 +26,15 @@ const expenses = [
     },
   ];
 
-function App() {
+  const addExpenseHandler = (expense) => {
+   console.log("from root", expense)
+ }
   return (
+    
     <div>
-      <h2>hello:Let's get started!</h2>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      />
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      />
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      />
-      <ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      />
-   
+      <h2>Let's get started!</h2>
+      <NewExpense onAddExpense={ addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
