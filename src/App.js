@@ -31,9 +31,10 @@ const App = () => {
     console.log("from root", expense)
     expenses.push(expense)
     setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses]
+      return  [...prevExpenses]
     })
- }
+  }
+  
   return (
     
     <div>
