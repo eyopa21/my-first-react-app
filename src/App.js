@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Expenses from './components/Expense/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
@@ -26,10 +26,13 @@ import NewExpense from './components/NewExpense/NewExpense';
 const App = () => {
 
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+  useEffect(() => {
+console.log("effect")
+  }, [expenses])
 
   const addExpenseHandler = (expense) => {
     console.log("from root", expense)
-    expenses.push(expense)
+    //expenses.push(expense)
     setExpenses((prevExpenses) => {
       return  [...prevExpenses]
     })
