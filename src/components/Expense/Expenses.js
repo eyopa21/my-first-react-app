@@ -23,7 +23,7 @@ return (
     <Card className='expenses'>
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
             <ExpensesChart expenses={filteredExpenses} />
-       <ExpensesList filteredExpenses={filteredExpenses} />
+            <ExpensesList filteredExpenses={filteredExpenses} />
            
 
     </Card>
